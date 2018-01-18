@@ -1,5 +1,6 @@
-package com.cadastrocliente.application;
+package com.cadastrocliente.repository;
 
+import com.cadastrocliente.entities.Cliente;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;

@@ -1,7 +1,7 @@
-package com.cadastrocliente.repository;
+package com.cadastrocliente.components;
 
-import com.cadastrocliente.application.ClienteRepository;
-import com.cadastrocliente.application.Cliente;
+import com.cadastrocliente.entities.Cliente;
+import com.cadastrocliente.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +11,13 @@ import java.util.Optional;
 public class ClienteCadastrar{
 
     ClienteRepository clienteRepository;
+    Sender sender;
 
     @Autowired
-    public ClienteCadastrar(ClienteRepository clienteRepository){
+    public ClienteCadastrar(ClienteRepository clienteRepository, Sender sender)
+    {
         this.clienteRepository = clienteRepository;
+        this.sender = sender;
     }
 
     public Cliente cadastra(Cliente cliente){
@@ -23,6 +26,7 @@ public class ClienteCadastrar{
             throw new RuntimeException("is already exists");
         } else {
             clienteRepository.save(cliente);
+            sender.enviaEmail(cliente.getEmailCliente());
         }
         return cliente;
     }

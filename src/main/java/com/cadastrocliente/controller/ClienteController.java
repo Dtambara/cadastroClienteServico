@@ -1,7 +1,7 @@
 package com.cadastrocliente.controller;
 
-import com.cadastrocliente.application.Cliente;
-import com.cadastrocliente.repository.ClienteCadastrar;
+import com.cadastrocliente.entities.Cliente;
+import com.cadastrocliente.components.ClienteCadastrar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
