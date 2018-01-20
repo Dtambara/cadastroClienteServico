@@ -2,5 +2,5 @@ spring:
     rabbitmq:
       host: '${RABBIT_HOST}'
       username: '${RABBIT_USER}'
-      password: '${RABBOT_PASSWORD}'
+      password: '${RABBIT_PASSWORD}'
       virtual-host: '${RABBIT_VHOST}'
