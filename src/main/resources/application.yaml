@@ -1,6 +1,24 @@
 spring:
+    profiles: prod
     rabbitmq:
       host: '${RABBIT_HOST}'
       username: '${RABBIT_USER}'
       password: '${RABBIT_PASSWORD}'
       virtual-host: '${RABBIT_VHOST}'
+
+---
+spring:
+    profiles: dev
+    rabbitmq:
+          host: localhost
+          username: guest
+          password: guest
+          port: 5162
+endpoints:
+    hypermedia:
+        enabled: true
+shell:
+    auth:
+        simple:
+            user:
+                password: admin

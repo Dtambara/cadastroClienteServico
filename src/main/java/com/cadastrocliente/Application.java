@@ -8,6 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
 @EnableTransactionManagement
@@ -20,13 +23,13 @@ public class Application {
 	@Bean
 	CommandLineRunner init(ClienteRepository clienteRepository) {
 		return (evt) ->  {
-			clienteRepository.save(new Cliente("Adam","adam@boot.com"));
-			clienteRepository.save(new Cliente("John","john@boot.com"));
-			clienteRepository.save(new Cliente("Smith","smith@boot.com"));
-			clienteRepository.save(new Cliente("Edgar","edgar@boot.com"));
-			clienteRepository.save(new Cliente("Martin","martin@boot.com"));
-			clienteRepository.save(new Cliente("Tom","tom@boot.com"));
-			clienteRepository.save(new Cliente("Sean","sean@boot.com"));
+			clienteRepository.save(new Cliente("André","andre@boot.com"));
+			clienteRepository.save(new Cliente("Thiago","thiago@boot.com"));
+			clienteRepository.save(new Cliente("Diego","diego@boot.com"));
+			clienteRepository.save(new Cliente("Gabriel","gabriel@boot.com"));
+			clienteRepository.save(new Cliente("Renan","renan@boot.com"));
+			clienteRepository.save(new Cliente("Bruno","bruno@boot.com"));
+			clienteRepository.save(new Cliente("Danilo","danilo@boot.com"));
 		};
 	}
 }
